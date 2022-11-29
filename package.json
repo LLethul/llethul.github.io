@@ -7,9 +7,12 @@
     "email": "ix1x0x2@gmail.com"
   },
   "homepage": "https://llethul.github.io/",
+  "repository": {
+    "url": "https://github.com/LLethul/llethul.github.io"
+  },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d .next/server/pages",
     "start": "next start",
     "build": "next build",
     "dev": "next dev",
