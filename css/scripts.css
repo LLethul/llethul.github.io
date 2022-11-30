@@ -99,13 +99,30 @@ body {
   line-height: 0.2;
 }
 
+.slist {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
+
+.scripts-display {
+  align-items: center;
+  color: white;
+}
+.scripts-display h2 {
+  text-align: center;
+  font-family: "Inconsolata", monospace;
+}
+
 a.button {
   display: inline-block;
   text-decoration: none;
   font-weight: bold;
-  color: inherit;
+  color: white;
   padding: 10px 20px;
   margin-top: 10px;
   border-radius: 3px;
   border: 1px solid #333;
+  font-family: "Inconsolata", monospace;
 }/*# sourceMappingURL=scripts.css.map */

@@ -9,7 +9,8 @@ function httpGet(theUrl, doWhenDone)
     return xmlHttp;
 }
 
-const githubBaseReqURL = "https://api.github.com/repos/LLethul/Scripts/git/trees/main"
+window.onload = () => {
+    const githubBaseReqURL = "https://api.github.com/repos/LLethul/Scripts/git/trees/main"
 httpGet(githubBaseReqURL, function(xmlHttp){
     console.log("Done")
     var code = JSON.parse(xmlHttp.responseText)
@@ -24,14 +25,13 @@ httpGet(githubBaseReqURL, function(xmlHttp){
                 httpGet(ting[1].url, function(xmlHt){
                     desc = atob(JSON.parse(xmlHt.responseText).content)
                     ///console.log(desc)
-                    var li = document.getElementById("yes")
-                    var o = li.getElementById('scripts-list')
+                    var o = document.getElementById('scripts-list')
                     var btn = document.createElement("a")
                     btn.href = `https://raw.githubusercontent.com/LLethul/Scripts/main/${name}/Main.lua`
                     btn.innerHTML = `${name} | ${desc}`
                     btn.className = "button"
 
-                    li.appendChild(o)
+                    o.appendChild(btn)
 
                     console.log('yes')
                 })
@@ -41,3 +41,4 @@ httpGet(githubBaseReqURL, function(xmlHttp){
         }
     });
 })
+}
