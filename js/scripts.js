@@ -24,11 +24,16 @@ httpGet(githubBaseReqURL, function(xmlHttp){
                 httpGet(ting[1].url, function(xmlHt){
                     desc = atob(JSON.parse(xmlHt.responseText).content)
                     ///console.log(desc)
-                    var li = document.getElementById("scripts-list")
+                    var li = document.getElementById("yes")
+                    var o = li.getElementById('scripts-list')
                     var btn = document.createElement("a")
                     btn.href = `https://raw.githubusercontent.com/LLethul/Scripts/main/${name}/Main.lua`
                     btn.innerHTML = `${name} | ${desc}`
                     btn.className = "button"
+
+                    li.appendChild(o)
+
+                    console.log('yes')
                 })
 
                 
