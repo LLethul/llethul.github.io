@@ -1,0 +1,110 @@
+/*
+* TO-DO
+* - same using svg
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700;800;900&display=swap");
+body {
+  background-color: #111111;
+}
+
+.hero {
+  width: 100%;
+  position: relative;
+  background: rgb(240, 249, 248);
+  font-family: "Inconsolata", monospace;
+}
+.hero .background-image {
+  content: "";
+  position: relative;
+  height: 40vh;
+  display: block;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: url("../assets/hero-scripts.jpg");
+  background-size: cover;
+}
+@media (min-width: 600px) {
+  .hero .background-image {
+    position: absolute;
+    height: 100%;
+  }
+}
+.hero .background-image:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background: linear-gradient(181.5deg, #111111 50%, rgb(240, 249, 248) 80%);
+}
+@media (min-width: 600px) {
+  .hero .background-image:after {
+    background: linear-gradient(90deg, #111111 50%, rgba(240, 249, 248, 0) 100%);
+  }
+}
+@media (min-width: 600px) {
+  .hero .background-image:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    background: inherit;
+    filter: blur(12px);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    -webkit-mask-image: linear-gradient(90deg, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 70%);
+            mask-image: linear-gradient(90deg, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 70%);
+  }
+}
+.hero .content {
+  position: relative;
+  z-index: 5;
+  color: rgb(255, 255, 255);
+  padding: 0 30px 50px;
+  text-align: center;
+}
+@media (min-width: 600px) {
+  .hero .content {
+    padding: 300px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+.hero .content .extra {
+  color: red;
+  font-size: 50px;
+}
+.hero .content h1 {
+  font-size: 50px;
+  margin-top: -20px;
+}
+@media (min-width: 600px) {
+  .hero .content h1 {
+    font-size: 50px;
+    max-width: 10em;
+    margin-bottom: 20px;
+    letter-spacing: -0.03em;
+  }
+}
+.hero .content p {
+  font-size: 29px;
+  max-width: 24em;
+  line-height: 0.2;
+}
+.hero .content a.button {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 3px;
+  border: 1px solid #333;
+}/*# sourceMappingURL=scripts.css.map */
