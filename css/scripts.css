@@ -98,7 +98,8 @@ body {
   max-width: 24em;
   line-height: 0.2;
 }
-.hero .content a.button {
+
+a.button {
   display: inline-block;
   text-decoration: none;
   font-weight: bold;
