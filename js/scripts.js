@@ -22,18 +22,24 @@ httpGet(githubBaseReqURL, function(xmlHttp){
                 var ting = JSON.parse(xmlHtt.responseText).tree
                 let desc;
 
-                httpGet(ting[1].url, function(xmlHt){
-                    desc = atob(JSON.parse(xmlHt.responseText).content)
-                    ///console.log(desc)
-                    var o = document.getElementById('scripts-list')
-                    var btn = document.createElement("a")
-                    btn.href = `https://raw.githubusercontent.com/LLethul/Scripts/main/${name}/Main.lua`
-                    btn.innerHTML = `${name} | ${desc}`
-                    btn.className = "button"
-
-                    o.appendChild(btn)
-
-                    console.log('yes')
+                ting.forEach(i => {
+                    if (i.path == "desc.txt") {
+                        desc = atob(i.content)
+                        httpGet(i.url, function(xmlHt){
+                            desc = atob(JSON.parse(xmlHt.responseText).content)
+                            ///console.log(desc)
+                            var o = document.getElementById('scripts-list')
+                            var btn = document.createElement("a")
+                            btn.href = `https://raw.githubusercontent.com/LLethul/Scripts/main/${name}/Main.lua`
+                            btn.innerHTML = `${name} | ${desc}`
+                            btn.className = "button"
+        
+                            o.appendChild(btn)
+                            o.appendChild(document.createElement("br"))
+        
+                            console.log('yes')
+                        })
+                    }
                 })
 
                 
