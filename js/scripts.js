@@ -24,7 +24,7 @@ httpGet(githubBaseReqURL, function(xmlHttp){
 
                 ting.forEach(i => {
                     if (i.path == "desc.txt") {
-                        desc = atob(i.content)
+                        desc = atob(i.content.replace("\n",' '))
                         httpGet(i.url, function(xmlHt){
                             desc = atob(JSON.parse(xmlHt.responseText).content)
                             ///console.log(desc)
