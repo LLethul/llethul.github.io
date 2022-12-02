@@ -9,6 +9,14 @@ function httpGet(theUrl, doWhenDone)
     return xmlHttp;
 }
 
+function utf8_to_b64( str ) {
+    return window.btoa(unescape(encodeURIComponent( str )));
+}
+
+function b64_to_utf8( str ) {
+    return decodeURIComponent(escape(window.atob( str )));
+}
+
 window.onload = () => {
     const githubBaseReqURL = "https://api.github.com/repos/LLethul/Scripts/git/trees/main"
 httpGet(githubBaseReqURL, function(xmlHttp){
@@ -24,7 +32,7 @@ httpGet(githubBaseReqURL, function(xmlHttp){
 
                 ting.forEach(i => {
                     if (i.path == "desc.txt") {
-                        desc = atob(i.content.replace("\n",' '))
+                        desc = b64_to_utf8(i.content)
                         httpGet(i.url, function(xmlHt){
                             desc = atob(JSON.parse(xmlHt.responseText).content)
                             ///console.log(desc)
