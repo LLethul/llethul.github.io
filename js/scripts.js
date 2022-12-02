@@ -32,7 +32,7 @@ httpGet(githubBaseReqURL, function(xmlHttp){
 
                 ting.forEach(i => {
                     if (i.path == "desc.txt") {
-                        desc = b64_to_utf8(i.content)
+                        desc = btoa(i.content)
                         httpGet(i.url, function(xmlHt){
                             desc = atob(JSON.parse(xmlHt.responseText).content)
                             ///console.log(desc)
