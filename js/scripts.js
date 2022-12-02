@@ -14,8 +14,12 @@ function utf8_to_b64( str ) {
 }
 
 function b64_to_utf8( str ) {
-    return decodeURIComponent(escape(window.atob( str )));
+    return decodeURIComponent(escape(atob( str )));
 }
+
+function replacer(key, value) {
+    return value.replace(/[^\w\s]/gi, '');
+  }
 
 window.onload = () => {
     const githubBaseReqURL = "https://api.github.com/repos/LLethul/Scripts/git/trees/main"
@@ -31,10 +35,9 @@ httpGet(githubBaseReqURL, function(xmlHttp){
                 let desc;
 
                 ting.forEach(i => {
-                    if (i.path == "desc.txt") {
-                        desc = btoa(i.content)
+                    if (i.path == "desc.txt"){
                         httpGet(i.url, function(xmlHt){
-                            desc = atob(JSON.parse(xmlHt.responseText).content)
+                            desc = b64_to_utf8(JSON.parse(xmlHt.responseText).content)
                             ///console.log(desc)
                             var o = document.getElementById('scripts-list')
                             var btn = document.createElement("a")
