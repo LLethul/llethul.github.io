@@ -36,6 +36,7 @@ httpGet(githubBaseReqURL, function(xmlHttp){
 
                 ting.forEach(i => {
                     if (i.path == "desc.txt"){
+                        console.log(i)
                         httpGet(i.url, function(xmlHt){
                             desc = b64_to_utf8(JSON.parse(xmlHt.responseText).content)
                             ///console.log(desc)
