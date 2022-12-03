@@ -5,6 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700;800;900&display=swap");
 body {
   background-color: #111111;
+  padding-bottom: 50px;
 }
 
 .hero {
@@ -97,13 +98,6 @@ body {
   font-size: 29px;
   max-width: 24em;
   line-height: 0.2;
-}
-
-.slist {
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  display: table;
 }
 
 .scripts-display {

@@ -7,6 +7,7 @@
 
 body {
   background-color: #111111;
+  padding-bottom: 50px;
 }
 
 
@@ -96,12 +97,12 @@ body {
     }
   }
 
-  .slist {
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    display: table;
-  }
+  // .slist {
+  //   align-items: center;
+  //   align-content: center;
+  //   justify-content: center;
+  //   display: table;
+  // }
 
   .scripts-display {
     align-items: center;
